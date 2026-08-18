@@ -4,9 +4,37 @@
     <base target="_top">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- รองรับการแสดงผลบนสมาร์ตโฟน แท็บเล็ต และคอมพิวเตอร์ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ระบบแสดงภาพขึ้นจอ LED</title>
+    <style>
+        /* ลบ Margin/Padding เริ่มต้นของเบราว์เซอร์ เพื่อไม่ให้เกิด Scrollbar ซ้อน */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* ป้องกันแถบเลื่อนของหน้าต่างหลัก */
+            background-color: #ffffff;
+        }
+
+        /* ตั้งค่า iframe ให้ยืดเต็มหน้าจอ 100% ตอบสนองทุกขนาดหน้าจอ */
+        .app-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <iframe style="width: 100%; height: 100vh;" scrolling="yes" src="https://script.google.com/macros/s/AKfycbwGXL7LkB-qtu6UdqXXQXDyvuOf8o5GdkpSpJbLeEyT9D0HgQeZU-SJzpRZbu8AcpDZ/exec?page=display" frameborder="0"></iframe>
+
+    <iframe 
+        class="app-iframe"
+        src="https://script.google.com/macros/s/AKfycbwGXL7LkB-qtu6UdqXXQXDyvuOf8o5GdkpSpJbLeEyT9D0HgQeZU-SJzpRZbu8AcpDZ/exec?page=display" 
+        scrolling="yes" 
+        allow="geolocation; microphone; camera">
+    </iframe>
+
 </body>
 </html>
